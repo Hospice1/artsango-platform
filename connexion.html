@@ -1,22 +1,141 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
+
 <head>
-<title>Connexion</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Connexion - ArtSango</title>
+
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+/* fond */
+
+body{
+margin:0;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(135deg,#8c5a2b,#c68642);
+font-family:'Poppins', sans-serif;
+}
+
+/* carte glass */
+
+.login-container{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+-webkit-backdrop-filter:blur(15px);
+
+padding:40px;
+border-radius:15px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+width:320px;
+text-align:center;
+
+color:white;
+}
+
+/* logo */
+
+.login-container img{
+width:60px;
+margin-bottom:10px;
+}
+
+/* inputs */
+
+.login-container input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+
+border:none;
+border-radius:8px;
+
+outline:none;
+}
+
+/* bouton */
+
+.login-container button{
+width:100%;
+padding:12px;
+
+background:#2b1d0e;
+color:white;
+
+border:none;
+border-radius:8px;
+
+cursor:pointer;
+transition:0.3s;
+}
+
+.login-container button:hover{
+background:#000;
+}
+
+/* liens */
+
+.links{
+margin-top:15px;
+font-size:14px;
+}
+
+.links a{
+color:#fff;
+text-decoration:none;
+}
+
+.links a:hover{
+text-decoration:underline;
+}
+
+/* retour */
+
+.back{
+display:block;
+margin-top:20px;
+color:white;
+text-decoration:none;
+}
+
+</style>
+
 </head>
 
 <body>
 
+<div class="login-container">
+
+<img src="logo.png">
+
 <h2>Connexion</h2>
 
-<input placeholder="Email">
-<input placeholder="Mot de passe">
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Mot de passe">
 
 <button>Se connecter</button>
 
+<div class="links">
+
 <p><a href="motdepasse.html">Mot de passe oublié ?</a></p>
-<p><a href="compte.html">Créer un compte</a></p>
+
+<p>Pas encore de compte ? <a href="compte.html">Créer un compte</a></p>
+
+</div>
+
+<a href="index.html" class="back">← Retour à l'accueil</a>
+
+</div>
 
 </body>
+
 </html>
