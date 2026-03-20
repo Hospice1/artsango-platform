@@ -1,45 +1,54 @@
-let products = JSON.parse(localStorage.getItem("products")) || []
+let currentUser = JSON.parse(localStorage.getItem("currentUser"))
+
+if(!currentUser){
+alert("Vous devez être connecté")
+window.location.href = "connexion.html"
+}
+
+/* récupérer produits */
+
+let allProducts = JSON.parse(localStorage.getItem("products")) || []
 
 function addProduct(){
 
-let name=document.getElementById("name").value
-let price=document.getElementById("price").value
+let name = document.getElementById("name").value
+let price = document.getElementById("price").value
 
-let product={
-id:Date.now(),
-name:name,
-price:price
+if(name === "" || price === ""){
+alert("Remplir les champs")
+return
 }
 
-products.push(product)
+let product = {
+id: Date.now(),
+name: name,
+price: price,
+owner: currentUser.email
+}
 
-localStorage.setItem("products",JSON.stringify(products))
+allProducts.push(product)
+
+localStorage.setItem("products", JSON.stringify(allProducts))
 
 renderProducts()
 
 }
 
-function deleteProduct(id){
-
-products=products.filter(p=>p.id!==id)
-
-localStorage.setItem("products",JSON.stringify(products))
-
-renderProducts()
-
-}
+/* afficher seulement les produits de l'utilisateur */
 
 function renderProducts(){
 
-let container=document.getElementById("productList")
+let container = document.getElementById("productList")
 
-container.innerHTML=""
+container.innerHTML = ""
 
-products.forEach(product=>{
+let userProducts = allProducts.filter(p => p.owner === currentUser.email)
 
-let div=document.createElement("div")
+userProducts.forEach(product => {
 
-div.innerHTML=`
+let div = document.createElement("div")
+
+div.innerHTML = `
 <b>${product.name}</b> - ${product.price} FCFA
 <button onclick="deleteProduct(${product.id})">Supprimer</button>
 `
@@ -47,6 +56,16 @@ div.innerHTML=`
 container.appendChild(div)
 
 })
+
+}
+
+function deleteProduct(id){
+
+allProducts = allProducts.filter(p => p.id !== id)
+
+localStorage.setItem("products", JSON.stringify(allProducts))
+
+renderProducts()
 
 }
 
