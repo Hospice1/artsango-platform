@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArtSango</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo-area">
+<img src="logo.png" class="logo">
+<h2>ArtSango</h2>
+</div>
+
+<div class="nav-right">
+
+<a href="connexion.html">
+<button>Connexion</button>
+</a>
+
+<button onclick="toggleArtisan()">Espace Artisan</button>
+
+<span onclick="toggleCart()" class="cart-icon">
+🛒 <span id="cart-count">0</span>
+</span>
+
+</div>
+
+</nav>
+
+
+<section class="hero">
+
+<h1>L'artisanat béninois connecté au monde</h1>
+
+<p>Découvrez les créations authentiques de nos artisans</p>
+
+
+<div class="wave"></div>
+
+</section>
+
+<section class="products">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e">
+
+<h4>Poterie Traditionnelle</h4>
+
+<p>15000 FCFA</p>
+
+<button onclick="addToCart('Poterie',15000)">Ajouter</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e">
+
+<h4>Tissage Waama</h4>
+
+<p>25000 FCFA</p>
+
+<button onclick="addToCart('Tissage',25000)">Ajouter</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e">
+
+<h4>Sculpture Bois</h4>
+
+<p>40000 FCFA</p>
+
+<button onclick="addToCart('Sculpture',40000)">Ajouter</button>
+
+</div>
+
+</section>
+
+
+<div id="cart-panel">
+
+<div class="panel-header">
+<h3>Mon panier</h3>
+<span onclick="toggleCart()" class="close-btn">✖</span>
+</div>
+
+<ul id="cart-items"></ul>
+
+<p>Total : <span id="cart-total">0</span> FCFA</p>
+
+<button onclick="clearCart()">Vider</button>
+
+<button onclick="checkout()" class="order-btn">Commander via WhatsApp</button>
+
+</div>
+
+
+
+
+<div id="artisan-panel">
+
+<div class="panel-header">
+<h3>Ajouter un produit</h3>
+<span onclick="toggleArtisan()" class="close-btn">✖</span>
+</div>
+
+<input id="product-name" placeholder="Nom produit">
+
+<input id="product-price" type="number" placeholder="Prix">
+
+<input type="file" id="product-image">
+
+<button onclick="addProduct()">Ajouter</button>
+
+</div>
+
+
+
+<script src="script.js"></script>
+<section class="explore-section">
+
+<h2>Découvrez toutes nos créations artisanales</h2>
+
+<button class="explore-btn" onclick="window.location.href='produits.html'">
+Explorer les créations
+</button>
+
+</section>
+
+<section class="faq-section">
+
+<button class="faq-toggle" onclick="toggleFAQ()">
+Questions fréquentes
+</button>
+
+<div id="faq-panel" class="faq-panel">
+
+<div class="faq-item">
+<h3 onclick="toggleAnswer(this)">Comment acheter un produit ?</h3>
+<p>Ajoutez le produit à votre panier puis cliquez sur commander via WhatsApp.</p>
+</div>
+
+<div class="faq-item">
+<h3 onclick="toggleAnswer(this)">Les artisans peuvent-ils vendre leurs produits ?</h3>
+<p>Oui. Les artisans peuvent ajouter leurs produits via l'espace artisan.</p>
+</div>
+
+<div class="faq-item">
+<h3 onclick="toggleAnswer(this)">Les produits sont-ils livrés à l'international ?</h3>
+<p>Oui, les commandes peuvent être organisées avec livraison internationale.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+<p>© 2026 ArtSango - L'artisanat vit ici</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

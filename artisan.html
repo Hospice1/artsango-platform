@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Profil Artisan</title>
+</head>
+
+<body>
+
+<h1>Produits de l'artisan</h1>
+
+<div id="artisanProducts"></div>
+
+<script>
+
+let products = JSON.parse(localStorage.getItem("products")) || []
+
+let container=document.getElementById("artisanProducts")
+
+products.forEach(p=>{
+
+let div=document.createElement("div")
+
+div.innerHTML=`
+<h3>${p.name}</h3>
+<p>${p.price} FCFA</p>
+`
+
+container.appendChild(div)
+
+})
+
+</script>
+
+</body>
+
+</html>
