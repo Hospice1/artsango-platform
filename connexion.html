@@ -122,7 +122,7 @@ text-decoration:none;
 <input type="email" placeholder="Email">
 <input type="password" placeholder="Mot de passe">
 
-<button>Se connecter</button>
+<button onclick="login()">Se connecter</button>
 
 <div class="links">
 
@@ -137,5 +137,28 @@ text-decoration:none;
 </div>
 
 </body>
+<script>
 
+function login(){
+
+let email = document.querySelector('input[type="email"]').value
+let password = document.querySelector('input[type="password"]').value
+
+if(email === "" || password === ""){
+alert("Veuillez remplir tous les champs")
+return
+}
+
+if(!email.includes("@")){
+alert("Email invalide")
+return
+}
+
+/* OK */
+
+alert("Connexion réussie")
+
+}
+
+</script>
 </html>
