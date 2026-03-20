@@ -149,14 +149,24 @@ alert("Veuillez remplir tous les champs")
 return
 }
 
-if(!email.includes("@")){
-alert("Email invalide")
+let users = JSON.parse(localStorage.getItem("users")) || []
+
+/* vérifier utilisateur */
+
+let user = users.find(u => u.email === email && u.password === password)
+
+if(!user){
+alert("Email ou mot de passe incorrect")
 return
 }
 
-/* OK */
+/* stocker session */
+
+localStorage.setItem("currentUser", JSON.stringify(user))
 
 alert("Connexion réussie")
+
+window.location.href = "index.html"
 
 }
 
