@@ -1,112 +1,20 @@
 <!DOCTYPE html>
 
-<html lang="fr">
-
+<html>
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Produits - ArtSango</title>
-
+<title>Produits</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<nav>
+<h1>Produits disponibles</h1>
 
-<div class="logo-area">
-<img src="logo.png" class="logo">
-<h2>ArtSango</h2>
-</div>
+<div class="products" id="products"></div>
 
-<div class="nav-right">
+<a href="index.html">Retour</a>
 
-<a href="index.html" class="back-btn">Accueil</a>
+<script src="script.js"></script>
 
-</div>
-
-</nav>
-
-<section class="hero">
-
-<h1>Nos créations artisanales</h1>
-
-<p>Découvrez les œuvres uniques de nos artisans</p>
-
-</section>
-
-<section class="products">
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e">
-
-<h4>Poterie Traditionnelle</h4>
-
-<p>15000 FCFA</p>
-
-<button>Commander</button>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e">
-
-<h4>Tissage Waama</h4>
-
-<p>25000 FCFA</p>
-
-<button>Commander</button>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e">
-
-<h4>Sculpture Bois</h4>
-
-<p>40000 FCFA</p>
-
-<button>Commander</button>
-
-</div>
-
-</section>
-
-<footer class="footer">
-
-<p>© 2026 ArtSango - L'artisanat vit ici</p>
-
-</footer>
-<script>
-
-let products=JSON.parse(localStorage.getItem("products")) || []
-
-let container=document.querySelector(".products")
-
-products.forEach(product=>{
-
-let card=document.createElement("div")
-
-card.className="card"
-
-card.innerHTML=`
-<img src="${product.image}">
-<h4>${product.name}</h4>
-<p>${product.price} FCFA</p>
-<button>Commander</button>
-`
-
-container.appendChild(card)
-
-})
-
-</script>
 </body>
-
 </html>
