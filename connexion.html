@@ -1,128 +1,22 @@
 <!DOCTYPE html>
 
-<html lang="fr">
-
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Connexion - ArtSango</title>
-
+<title>Connexion</title>
 <link rel="stylesheet" href="style.css">
-
-<style>
-
-body{
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-background:linear-gradient(135deg,#8c5a2b,#c68642);
-font-family:Arial;
-}
-
-.login-container{
-background:white;
-padding:40px;
-border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-width:320px;
-text-align:center;
-}
-
-.login-container img{
-width:60px;
-margin-bottom:10px;
-}
-
-.login-container h2{
-margin-bottom:20px;
-}
-
-.login-container input{
-width:100%;
-padding:10px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:5px;
-}
-
-.login-container button{
-width:100%;
-padding:10px;
-background:#8c5a2b;
-color:white;
-border:none;
-border-radius:5px;
-cursor:pointer;
-}
-
-.login-container button:hover{
-background:#6b3e26;
-}
-
-.links{
-margin-top:15px;
-font-size:14px;
-}
-
-.links a{
-color:#8c5a2b;
-text-decoration:none;
-}
-
-.back{
-margin-top:20px;
-display:inline-block;
-}
-</style>
-
 </head>
 
 <body>
 
-<div class="login-container">
-
-<img src="logo.png">
-
 <h2>Connexion</h2>
 
-<input type="email" placeholder="Email">
-
-<input type="password" placeholder="Mot de passe">
+<input placeholder="Email">
+<input placeholder="Mot de passe">
 
 <button>Se connecter</button>
 
-<div class="links">
-
 <p><a href="motdepasse.html">Mot de passe oublié ?</a></p>
+<p><a href="compte.html">Créer un compte</a></p>
 
-<p>Pas encore de compte ? <a href="compte.html">Créer un compte artisan</a></p>
-
-</div>
-
-<a href="index.html" class="back">← Retour à l'accueil</a>
-
-</div>
-<script>
-
-function createAccount(){
-
-let email=document.querySelector('input[type="email"]').value
-
-if(email===""){
-alert("Veuillez entrer un email")
-return
-}
-
-alert("Un email de vérification a été envoyé à " + email)
-
-localStorage.setItem("artisanEmail",email)
-
-window.location.href="dashboard.html"
-
-}
-
-</script>
 </body>
-
 </html>
