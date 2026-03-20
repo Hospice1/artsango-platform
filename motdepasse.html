@@ -1,19 +1,129 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
+
 <head>
-<title>Mot de passe oublié</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mot de passe oublié - ArtSango</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* fond */
+
+body{
+margin:0;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(135deg,#8c5a2b,#c68642);
+font-family:'Poppins', sans-serif;
+}
+
+/* carte */
+
+.reset-container{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+-webkit-backdrop-filter:blur(15px);
+
+padding:40px;
+border-radius:15px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+width:320px;
+text-align:center;
+
+color:white;
+}
+
+/* logo */
+
+.reset-container img{
+width:60px;
+margin-bottom:10px;
+}
+
+/* inputs */
+
+.reset-container input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+
+border:none;
+border-radius:8px;
+
+outline:none;
+}
+
+/* bouton */
+
+.reset-container button{
+width:100%;
+padding:12px;
+
+background:#2b1d0e;
+color:white;
+
+border:none;
+border-radius:8px;
+
+cursor:pointer;
+transition:0.3s;
+}
+
+.reset-container button:hover{
+background:#000;
+}
+
+/* texte */
+
+.reset-container p{
+font-size:14px;
+margin-bottom:15px;
+}
+
+/* retour */
+
+.back{
+display:block;
+margin-top:20px;
+color:white;
+text-decoration:none;
+}
+
+.back:hover{
+text-decoration:underline;
+}
+
+</style>
+
 </head>
 
 <body>
 
+<div class="reset-container">
+
+<img src="logo.png">
+
 <h2>Mot de passe oublié</h2>
 
-<input placeholder="Email">
+<p>Entrez votre email pour recevoir un lien de réinitialisation.</p>
 
-<button>Envoyer</button>
+<input type="email" placeholder="Votre email">
 
-<a href="connexion.html">Retour</a>
+<button>Envoyer le lien</button>
+
+<a href="connexion.html" class="back">← Retour à la connexion</a>
+
+</div>
 
 </body>
+
 </html>
