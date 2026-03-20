@@ -41,3 +41,12 @@ nav.innerHTML = `
 }
 
 }
+function logout(){
+
+localStorage.removeItem("currentUser")
+
+alert("Déconnecté")
+
+window.location.href = "index.html"
+
+}
