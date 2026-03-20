@@ -1,46 +1,120 @@
 body{
-font-family:Arial;
 margin:0;
+font-family:'Poppins', sans-serif;
+background:#f5f1e8;
 }
+
+/* NAVBAR */
 
 nav{
 display:flex;
 justify-content:space-between;
-padding:15px;
-background:#8c5a2b;
+align-items:center;
+padding:15px 30px;
+background:#2b1d0e;
 color:white;
 }
 
 .logo{
 width:40px;
+margin-right:10px;
 }
+
+.logo-area{
+display:flex;
+align-items:center;
+}
+
+/* HERO */
 
 .hero{
 text-align:center;
-padding:50px;
-background:#c68642;
+padding:80px 20px;
+background:linear-gradient(135deg,#8c5a2b,#c68642);
 color:white;
 }
+
+.hero h1{
+margin-bottom:10px;
+}
+
+/* PRODUCTS */
 
 .products{
 display:flex;
 gap:20px;
-padding:20px;
+padding:40px;
+justify-content:center;
+flex-wrap:wrap;
 }
 
 .card{
 background:white;
-padding:15px;
-border-radius:10px;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:center;
+width:220px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
 }
 
 .card img{
-width:150px;
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:10px;
 }
+
+/* BUTTON */
+
+button{
+background:#8c5a2b;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#6b3e26;
+}
+
+/* EXPLORE SECTION */
+
+.explore-section{
+text-align:center;
+padding:50px;
+}
+
+/* FAQ */
+
+.faq-section{
+text-align:center;
+padding:50px;
+}
+
+#faq-panel{
+display:none;
+max-width:600px;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
 
 footer{
 text-align:center;
 padding:20px;
 background:#2b1d0e;
 color:white;
+margin-top:50px;
 }
