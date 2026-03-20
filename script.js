@@ -25,11 +25,6 @@ p.style.display==="block" ? "none" : "block"
 let user = JSON.parse(localStorage.getItem("currentUser"))
 
 if(user){
-console.log("Connecté :", user.name)
-}
-let user = JSON.parse(localStorage.getItem("currentUser"))
-
-if(user){
 
 let nav = document.querySelector(".nav-right")
 
