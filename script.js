@@ -27,3 +27,17 @@ let user = JSON.parse(localStorage.getItem("currentUser"))
 if(user){
 console.log("Connecté :", user.name)
 }
+let user = JSON.parse(localStorage.getItem("currentUser"))
+
+if(user){
+
+let nav = document.querySelector(".nav-right")
+
+if(nav){
+nav.innerHTML = `
+<span>👤 ${user.name}</span>
+<button onclick="logout()">Déconnexion</button>
+`
+}
+
+}
