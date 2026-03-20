@@ -22,3 +22,8 @@ let p=el.nextElementSibling
 p.style.display =
 p.style.display==="block" ? "none" : "block"
 }
+let user = JSON.parse(localStorage.getItem("currentUser"))
+
+if(user){
+console.log("Connecté :", user.name)
+}
