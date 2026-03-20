@@ -148,10 +148,10 @@ function toggleFAQ(){
 
 let panel=document.getElementById("faq-panel")
 
-if(panel.style.display==="block"){
-panel.style.display="none"
+if(panel.style.display=== "block"){
+panel.style.display= "none"
 }else{
-panel.style.display="block"
+panel.style.display= "block"
 }
 
 }
