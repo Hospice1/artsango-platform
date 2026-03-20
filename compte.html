@@ -1,21 +1,143 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
+
 <head>
-<title>Créer un compte</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Créer un compte - ArtSango</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* fond */
+
+body{
+margin:0;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(135deg,#8c5a2b,#c68642);
+font-family:'Poppins', sans-serif;
+}
+
+/* carte */
+
+.signup-container{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+-webkit-backdrop-filter:blur(15px);
+
+padding:40px;
+border-radius:15px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+width:320px;
+text-align:center;
+
+color:white;
+}
+
+/* logo */
+
+.signup-container img{
+width:60px;
+margin-bottom:10px;
+}
+
+/* inputs */
+
+.signup-container input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+
+border:none;
+border-radius:8px;
+
+outline:none;
+}
+
+/* bouton */
+
+.signup-container button{
+width:100%;
+padding:12px;
+
+background:#2b1d0e;
+color:white;
+
+border:none;
+border-radius:8px;
+
+cursor:pointer;
+transition:0.3s;
+}
+
+.signup-container button:hover{
+background:#000;
+}
+
+/* liens */
+
+.links{
+margin-top:15px;
+font-size:14px;
+}
+
+.links a{
+color:white;
+text-decoration:none;
+}
+
+.links a:hover{
+text-decoration:underline;
+}
+
+/* retour */
+
+.back{
+display:block;
+margin-top:20px;
+color:white;
+text-decoration:none;
+}
+
+.back:hover{
+text-decoration:underline;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h2>Créer un compte</h2>
+<div class="signup-container">
 
-<input placeholder="Nom">
-<input placeholder="Email">
-<input placeholder="Mot de passe">
+<img src="logo.png">
 
-<button>Créer</button>
+<h2>Créer un compte artisan</h2>
 
-<a href="connexion.html">Retour</a>
+<input type="text" placeholder="Nom complet">
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Mot de passe">
+<input type="tel" placeholder="Téléphone">
+
+<button>Créer mon compte</button>
+
+<div class="links">
+<p>Déjà un compte ? <a href="connexion.html">Se connecter</a></p>
+</div>
+
+<a href="index.html" class="back">← Retour à l'accueil</a>
+
+</div>
 
 </body>
+
 </html>
