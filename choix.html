@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Choix du profil - ArtSango</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+margin:0;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(135deg,#8c5a2b,#000);
+font-family:'Poppins', sans-serif;
+}
+
+.container{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+padding:40px;
+border-radius:20px;
+text-align:center;
+color:white;
+width:350px;
+}
+
+.container h2{
+margin-bottom:30px;
+}
+
+/* boutons */
+
+.choice-btn{
+display:block;
+width:100%;
+padding:15px;
+margin-bottom:15px;
+
+border-radius:30px;
+border:none;
+
+font-size:16px;
+cursor:pointer;
+
+background:#8c5a2b;
+color:white;
+
+transition:0.3s;
+}
+
+.choice-btn:hover{
+background:#6b3e26;
+transform:scale(1.05);
+}
+
+.secondary{
+background:transparent;
+border:1px solid white;
+}
+
+.secondary:hover{
+background:white;
+color:black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Choisissez votre profil</h2>
+
+<button class="choice-btn" onclick="window.location.href='dashboard.html'">
+Je suis un artisan
+</button>
+
+<button class="choice-btn secondary" onclick="window.location.href='index.html'">
+Je suis un client
+</button>
+
+</div>
+
+</body>
+
+</html>
