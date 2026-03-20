@@ -141,8 +141,8 @@ text-decoration:none;
 
 function login(){
 
-let email = document.querySelector('input[type="email"]').value
-let password = document.querySelector('input[type="password"]').value
+let email = document.querySelector('input[type="email"]').value.trim()
+let password = document.querySelector('input[type="password"]').value.trim()
 
 if(email === "" || password === ""){
 alert("Veuillez remplir tous les champs")
@@ -151,16 +151,18 @@ return
 
 let users = JSON.parse(localStorage.getItem("users")) || []
 
-/* vérifier utilisateur */
+console.log("Users:", users) // DEBUG
 
-let user = users.find(u => u.email === email && u.password === password)
+let user = users.find(u => 
+u.email.trim() === email && u.password === password
+)
 
 if(!user){
 alert("Email ou mot de passe incorrect")
 return
 }
 
-/* stocker session */
+/* ENREGISTRER SESSION */
 
 localStorage.setItem("currentUser", JSON.stringify(user))
 
@@ -170,5 +172,6 @@ window.location.href = "index.html"
 
 }
 
+</script>
 </script>
 </html>
