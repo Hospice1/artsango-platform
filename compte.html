@@ -163,65 +163,58 @@ window.db = db;
 </script> 
  </body>
  
-<script>
+<script type="module">
 
-function createAccount(){
+import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
+
+async function createAccount(){
 
 let name = document.querySelector('input[type="text"]').value
 let email = document.querySelector('input[type="email"]').value
 let password = document.querySelector('input[type="password"]').value
 let phone = document.querySelector('input[type="tel"]').value
 
-/* validation */
-
 if(name === "" || email === "" || password === "" || phone === ""){
-alert("Veuillez remplir tous les champs")
+alert("Remplir tous les champs")
 return
 }
 
-if(!email.includes("@")){
-alert("Email invalide")
-return
+let usersRef = collection(window.db, "users")
+
+let snapshot = await getDocs(usersRef)
+
+/* vérifier email existant */
+
+let exists = false
+
+snapshot.forEach(doc => {
+if(doc.data().email === email){
+exists = true
 }
-
-if(password.length < 6){
-alert("Mot de passe trop court")
-return
-}
-
-/* récupérer comptes existants */
-
-let users = JSON.parse(localStorage.getItem("users")) || []
-
-/* vérifier si email existe déjà */
-
-let exists = users.find(user => user.email === email)
+})
 
 if(exists){
-alert("Cet email est déjà utilisé")
+alert("Email déjà utilisé")
 return
 }
 
-/* créer compte */
+/* ajouter utilisateur */
 
-let newUser = {
+await addDoc(usersRef, {
 name,
 email,
 password,
-phone
-}
-
-users.push(newUser)
-
-/* sauvegarde */
-
-localStorage.setItem("users", JSON.stringify(users))
+phone,
+role: "client"
+})
 
 alert("Compte créé avec succès")
 
 window.location.href = "choix.html"
 
 }
+
+window.createAccount = createAccount
 
 </script>
 </html>
