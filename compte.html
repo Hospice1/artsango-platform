@@ -141,6 +141,27 @@ Créer mon compte
 </div>
 
 </body>
+ <script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCK-wXBnYxniyrchhGcVRbwA6IerO8IL0U",
+  authDomain: "artsango.firebaseapp.com",
+  projectId: "artsango",
+  storageBucket: "artsango.firebasestorage.app",
+  messagingSenderId: "1096953514654",
+  appId: "1:1096953514654:web:50aa3648b1c01c1cc2498f",
+  measurementId: "G-Z14F8YERJ9"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+window.db = db;
+
+</script> 
 <script>
 
 function createAccount(){
