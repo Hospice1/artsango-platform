@@ -128,7 +128,7 @@ text-decoration:underline;
 <input type="password" placeholder="Mot de passe">
 <input type="tel" placeholder="Téléphone">
 
-<button onclick="window.location.href='choix.html'">
+<button onclick="createAccount()">
 Créer mon compte
 </button>
 
@@ -141,5 +141,39 @@ Créer mon compte
 </div>
 
 </body>
+<script>
 
+function createAccount(){
+
+let name = document.querySelector('input[type="text"]').value
+let email = document.querySelector('input[type="email"]').value
+let password = document.querySelector('input[type="password"]').value
+let phone = document.querySelector('input[type="tel"]').value
+
+if(name === "" || email === "" || password === "" || phone === ""){
+alert("Veuillez remplir tous les champs")
+return
+}
+
+/* vérification email simple */
+
+if(!email.includes("@")){
+alert("Email invalide")
+return
+}
+
+/* vérification mot de passe */
+
+if(password.length < 6){
+alert("Mot de passe trop court (min 6 caractères)")
+return
+}
+
+/* si tout est bon */
+
+window.location.href = "choix.html"
+
+}
+
+</script>
 </html>
