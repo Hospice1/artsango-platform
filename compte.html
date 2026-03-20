@@ -150,26 +150,52 @@ let email = document.querySelector('input[type="email"]').value
 let password = document.querySelector('input[type="password"]').value
 let phone = document.querySelector('input[type="tel"]').value
 
+/* validation */
+
 if(name === "" || email === "" || password === "" || phone === ""){
 alert("Veuillez remplir tous les champs")
 return
 }
-
-/* vérification email simple */
 
 if(!email.includes("@")){
 alert("Email invalide")
 return
 }
 
-/* vérification mot de passe */
-
 if(password.length < 6){
-alert("Mot de passe trop court (min 6 caractères)")
+alert("Mot de passe trop court")
 return
 }
 
-/* si tout est bon */
+/* récupérer comptes existants */
+
+let users = JSON.parse(localStorage.getItem("users")) || []
+
+/* vérifier si email existe déjà */
+
+let exists = users.find(user => user.email === email)
+
+if(exists){
+alert("Cet email est déjà utilisé")
+return
+}
+
+/* créer compte */
+
+let newUser = {
+name,
+email,
+password,
+phone
+}
+
+users.push(newUser)
+
+/* sauvegarde */
+
+localStorage.setItem("users", JSON.stringify(users))
+
+alert("Compte créé avec succès")
 
 window.location.href = "choix.html"
 
