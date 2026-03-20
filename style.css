@@ -124,7 +124,8 @@ height:90vh;
 
 background:url("hero.jpg") no-repeat center center;
 background-size:cover;
-
+background-position: 70% center;
+  
 display:flex;
 align-items:center;
 justify-content:center;
