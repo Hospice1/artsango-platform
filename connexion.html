@@ -157,40 +157,49 @@ window.db = db;
 
 </script>
 </body>
-<script>
+<script type="module">
 
-function login(){
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
 
-let email = document.querySelector('input[type="email"]').value.trim()
-let password = document.querySelector('input[type="password"]').value.trim()
+async function login(){
+
+let email = document.querySelector('input[type="email"]').value
+let password = document.querySelector('input[type="password"]').value
 
 if(email === "" || password === ""){
-alert("Veuillez remplir tous les champs")
+alert("Remplir tous les champs")
 return
 }
 
-let users = JSON.parse(localStorage.getItem("users")) || []
+let usersRef = collection(window.db, "users")
+let snapshot = await getDocs(usersRef)
 
-console.log("Users:", users) // DEBUG
+let foundUser = null
 
-let user = users.find(u => 
-u.email.trim() === email && u.password === password
-)
+snapshot.forEach(doc => {
+let user = doc.data()
 
-if(!user){
+if(user.email === email && user.password === password){
+foundUser = user
+}
+})
+
+if(!foundUser){
 alert("Email ou mot de passe incorrect")
 return
 }
 
-/* ENREGISTRER SESSION */
+/* stocker session */
 
-localStorage.setItem("currentUser", JSON.stringify(user))
+localStorage.setItem("currentUser", JSON.stringify(foundUser))
 
 alert("Connexion réussie")
 
 window.location.href = "index.html"
 
 }
+
+window.login = login
 
 </script>
 </script>
